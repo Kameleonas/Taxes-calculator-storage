@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <img src="/assets/taxes.png" alt="taxes">
+    <form>
+        <div class="inputFields">
+            <div class="box1">
+                <span class="wrap">
+                    <label for="telia"><h3>Telia</h3></label>
+                    <input type="number" step="0.01" name="telia" id="telia" placeholder="Telia sąskaita Eur">
+                </span>
+                <span class="wrap">
+                    <label for="elektra"><h3>Elektra</h3></label>
+                    <input type="number" step="0.01" name="elektra" id="elektra" placeholder="Elektra sąskaita Eur">
+                </span>
+                <span class="wrap">
+                    <label for="dujos"><h3>Dujos</h3></label>
+                    <input type="number" step="0.01" name="dujos" id="dujos" placeholder="Dujos sąskaita Eur">
+                    <input type="number" step="0.01" name="dujosSkaitiklis" id="dujosSkaitiklis" placeholder="dujos Skaitiklis">
+                </span>
+            </div>
+            <div class="box2">
+                <span class="wrap">
+                    <label for="karstasVanduo"><h3>Karštas vanduo</h3></label>
+                    <input type="number" step="0.01" name="karstasVanduo" id="karstasVanduo" placeholder="Karštas vanduo Skaitiklis">
+                </span>
+                <span class="wrap">
+                    <label for="saltasVanduo"><h3>Šaltas vanduo</h3></label>
+                    <input type="number" step="0.01" name="saltasVanduo" id="saltasVanduo" placeholder="Šaltas vanduo sąskaita Eur">
+                    <input type="number" step="0.01" name="saltasVanduo" id="saltasVanduoSkaitiklis" placeholder="Šaltas vanduo Skaitiklis">
+                </span>
+                <span class="wrap">
+                    <label for="bendrija"><h3>Bendrija</h3></label>
+                    <input type="number" step="0.01" name="bendrija" id="bendrija" placeholder="Bendrija sąskaita Eur">
+                </span>
+            </div>
+        </div>
+        <button type="submit">Suvesti</button>        
+    </form>
+    <div id="printData"></div>
+</body>
+</html>

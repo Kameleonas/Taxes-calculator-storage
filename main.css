@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: url(/assets/mainBG.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(160, 156, 156);
+  border-radius: 10px;
+  align-items: flex-start;
+  width: 80vw;
+  padding: 0.5rem;
+  background: rgba(255, 235, 205, 0.3);
+  margin: 20.5vh 0 2rem 0;
+}
+
+form .inputFields {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.box1, .box2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+.wrap {
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+body img {
+  position: absolute;
+  top: 50px;
+  left: 27vw;
+  margin: 3rem 15rem;
+  width: 10vw;
+}
+
+form input {
+  width: 20vw;
+  height: 40px;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  border-radius: 7px;
+  border: 2px solid #000;
+  padding-left: 10px;
+}
+
+form button {
+  align-self: center;
+  width: 10vw;
+  height: 6vh;
+  color: white;
+  font-weight: 900;
+  font-size: 1.3em;
+  border-radius: 7px;
+  background: linear-gradient(45deg, rgb(43, 187, 14), red);
+  border: 2px solid orange;
+}
+
+form button:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 2px 3px 2px 0px rgb(182, 161, 161);
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: row;
+}
+
+#printData {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgba(255, 235, 205, 0.3);
+  border: 2px solid rgb(160, 156, 156);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.printDataField {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+  padding: 1rem;
+  margin: 1rem;
+}/*# sourceMappingURL=main.css.map */
