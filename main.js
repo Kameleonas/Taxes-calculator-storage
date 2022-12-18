@@ -1,13 +1,17 @@
+// const fs = require("fs");
+const dataStorage = {};
+const prefixID = "stID-";
+let storageID = 0;
+let fullID;
+// const dataStorage = require("./data.json");
+
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  const dataDiv = document.getElementById("printData");
-  dataDiv.appendChild(createNewDivWithData());
+  storageID++;
+  fullID = prefixID + storageID;
 
-  // Implement local storage - API savedData.json
-  // fetch("/savedData.json")
-  //     .then(resp => resp.json)
-  //     .then(result => console.log(result))
-  //     .catch(err => console.log(err));
+  const dataDiv = document.getElementById("printData");
+  dataDiv.appendChild(createNewDivWithData(fullID));
 });
 
 function getCurrentDate() {
@@ -40,21 +44,38 @@ function createNewDivWithData() {
   ).value;
   const bendrija = document.getElementById("bendrija").value;
 
-  const dateTime = getCurrentDate();
+  const dateTime = getCurrentDate(fullID);
   const total = calculateSum(telia, elektra, dujos, saltasVanduo, bendrija);
+  // saving data
+  dataStorage[fullID] = {
+    dateTime,
+    telia,
+    elektra,
+    dujos,
+    dujosSkaitiklis,
+    karstasVanduo,
+    saltasVanduo,
+    saltasVanduoSkaitiklis,
+    total,
+    bendrija,
+  };
+
+  console.log(dataStorage, fullID);
+
+  // fs.writeFileSync("data.json", dataStorage);
 
   const printData = document.createElement("div");
   printData.classList.add("printDataField");
-  printData.innerHTML = `<h2>${dateTime}</h2> <br> 
-                            Telia - ${telia}Eur <br>
-                            Elektra - ${elektra}Eur <br>
-                            Dujos - ${dujos}Eur <br>
-                            Šaltas vanduo - ${saltasVanduo}Eur <br>
-                            Bendrija - ${bendrija}Eur <br> <br>
-                            <h4>Viso sumokėta - ${total} Eur</h4> <br>
-                            <h3>Skaitinkių rodmenys</h3> <br>
-                            Dujos - ${dujosSkaitiklis}m^3 <br>
-                            Karštas vanduo - ${karstasVanduo}m^3 <br>
-                            Šaltas vanduo - ${saltasVanduoSkaitiklis}m^3`;
+  printData.innerHTML = `<h2>${dataStorage[fullID].dateTime}</h2> <br> 
+                    Telia - ${dataStorage[fullID].telia}Eur <br>
+                    Elektra - ${dataStorage[fullID].elektra}Eur <br>
+                    Dujos - ${dataStorage[fullID].dujos}Eur <br>
+                    Šaltas vanduo - ${dataStorage[fullID].saltasVanduo}Eur <br>
+                    Bendrija - ${dataStorage[fullID].bendrija}Eur <br> <br>
+                    <h4>Viso sumokėta - ${dataStorage[fullID].total} Eur</h4> <br>
+                    <h3>Skaitinkių rodmenys</h3> <br>
+                    Dujos - ${dataStorage[fullID].dujos}m^3 <br>
+                    Karštas vanduo - ${dataStorage[fullID].karstasVanduo}m^3 <br>
+                    Šaltas vanduo - ${dataStorage[fullID].saltasVanduo}m^3`;
   return printData;
 }
